@@ -1,0 +1,1 @@
+👋🏽olá sou vinicius, nesse projeto eu desenvolvi um aplicativo de vendas online , inspirado neste desingn "https://dribbble.com/shots/24095196-Fashion-E-Commerce-App", ele não esta 100% concluido mas esta bem legal , me esforcei bastante pra ter este resultado.
