@@ -1,0 +1,155 @@
+<DetalhesProdutoPage>:
+    FloatLayout:
+        id : conteiner_principal
+
+
+        Carousel:
+            id: carousel
+            pos_hint: {"x": 0, "top": 1}
+            size_hint: 1, 0.5
+
+
+        LabelDescricao:
+            id : nome_produto
+            text: ""
+            pos_hint: {"x": 0.05, "top": 0.45}
+            size_hint: 0.9, 0.05
+            color: utils.get_color_from_hex("#34353a")
+            font_size: '11sp'
+            font_name: "sanchez/Sanchezregular.otf"
+            halign: 'left'
+            valign : 'top'
+        
+
+        LabelCustom:
+            id : preco_produto
+            text: ""
+            pos_hint: {"x": 0.05, "top": 0.42}
+            size_hint: 1, 0.05
+            color: utils.get_color_from_hex("#0a0b0f")
+            font_size: '13sp'
+            markup : True
+            font_name: "sanchez/Sanchezregular.otf"
+
+            
+
+
+        ImageButtonCustom:
+
+            pos_hint: {"x": 0.05, "top": 1}
+            size_hint: 0.05, 0.05
+            source: "icones/voltar.png"
+            on_release: app.sair_page_detalhes_produtos()  
+
+
+        LabelDescricao:
+            id : descricao_produto
+            text: ""
+            pos_hint: {"center_x": 0.5, "top": 0.375}
+            size_hint: 0.9, 0.1
+            color: utils.get_color_from_hex("#8b8f92")
+            font_size: '7sp'
+            halign: 'left'
+            valign : 'top'
+            font_name: "sanchez/Sanchezregular.otf"
+
+
+
+
+        MDFloatLayout:
+            id : conteiner_cores
+            pos_hint: {"x": 0.05, "top": 0.22}
+            size_hint: 0.35, 0.13 
+            spacing: 20, 10    
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 0.2
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [7]
+
+        LabelDescricao:
+            text: "Cores"
+            pos_hint: {"x": 0.05, "top": 0.25}
+            size_hint: 0.3, 0.03
+            color: utils.get_color_from_hex("#8b8f92")
+            font_size: '13sp'
+            halign: 'left'
+            valign : 'top'
+            font_name: "sanchez/Sanchezregular.otf" 
+
+
+        MDFloatLayout:
+            id : conteiner_tamanhos
+            pos_hint: {"x": 0.48, "top": 0.22}
+            size_hint: 0.35, 0.13
+            spacing: 20, 10
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 0.2
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [7]
+
+        LabelDescricao:
+            text: "Tamanhos"
+            pos_hint: {"x": 0.48, "top": 0.25}
+            size_hint: 0.3, 0.03
+            color: utils.get_color_from_hex("#8b8f92")
+            font_size: '13sp'
+            halign: 'left'
+            valign : 'top'
+            font_name: "sanchez/Sanchezregular.otf" 
+        
+
+        FloatLayout:
+            id : adicionar_carrinho
+            pos_hint: {"x": 0.05, "top": 0.08}
+            size_hint: 0.425, 0.05
+            canvas:
+                Color:
+                    rgba: 0, 0, 0, 1
+                Line:
+                    width: 1
+                    rectangle: self.pos[0], self.pos[1], self.size[0], self.size[1]
+            Image:
+                pos_hint: {"x": 0, "center_y": 0.5}
+                size_hint: 0.25, 0.6
+                source: "icones/carrinho.png"
+            
+            LabelButton:
+                text:"ADICIONAR AO CARRINHO"
+                pos_hint: {"x": 0.23, "center_y": 0.5}
+                size_hint: 0.85, 1
+                font_size: '7sp'    
+                color: 0, 0, 0, 1
+                valign : 'middle'
+                bold: True
+                on_release: app.adicionar_produto_carrinho_thread()
+
+
+
+        FloatLayout:
+            id : comprar_agora
+            pos_hint: {"right": 0.95, "top": 0.08}
+            size_hint: 0.425, 0.05
+            canvas:
+                Color:
+                    rgba: 0,0,0,1
+                Rectangle:
+                    size:self.size
+                    pos: self.pos
+
+            LabelDescricao:
+                text:"COMPRAR AGORA"
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                size_hint: 1, 1
+                font_size: '7sp'    
+                color: 1, 1, 1, 1
+                halign: 'center'
+                valign : 'middle'
+                bold: True
+
+            

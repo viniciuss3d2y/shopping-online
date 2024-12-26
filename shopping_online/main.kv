@@ -1,0 +1,58 @@
+
+#: import utils kivy.utils
+#: include kv/homepage.kv
+#: include kv/criarcontapage.kv
+#: include kv/loginpage.kv
+#: include kv/detalhesprodutopage.kv
+#: include kv/carrinhopage.kv
+#: include kv/produtoscategoriapage.kv
+#: include kv/searchpage.kv
+
+
+
+FloatLayout:
+    id: conteiner_mainkv
+    canvas.before:
+        Color:
+            rgba: utils.get_color_from_hex("#FFFFFF")
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    ScreenManager:
+        id: ScreenManager
+
+
+
+        LoginPage:
+            name: "loginpage"
+            id: loginpage
+            
+        CriarContaPage:
+            name: "criarcontapage"
+            id: criarcontapage
+
+            
+        HomePage:
+            name: "homepage"
+            id : homepage
+        
+        DetalhesProdutoPage:
+            name : "detalhesprodutopage"
+            id : detalhesprodutopage
+        
+        CarrinhoPage:
+            name: "carrinhopage"
+            id : carrinhopage
+        
+        ProdutosCategoriaPage:
+            name: "produtoscategoriapage"
+            id : produtoscategoriapage
+
+
+        SearchPage:
+            name: "searchpage"
+            id: searchpage
+
+
